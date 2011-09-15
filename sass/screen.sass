@@ -347,33 +347,30 @@ header
     .number
       color: $green
       font-size: 30px
-.wrap
-  margin: 0 auto
-  width: 100%
-  max-width: 1140px
-  position: relative
+
 
 #banner
   @include gradient(#ddd, #ccc)
   overflow: auto
   border-bottom: 1px solid #888
   .headline
-    @include grid(8)
     background: url(../img/banner-bg.png) right bottom no-repeat
     height: 390px
+    width: 60%
+    margin: 0 2.5%
+    float: left
     h2
       color: $med_blue
       position: relative
       top: 30px
       left: 40px
-      font-size: 52px
-      line-height: 58px
       font-weight: 100
   .form
-    @include grid(4)
     min-height: 370px
     background: rgba(255, 255, 255, 0.5)
-    margin: 10px 0
+    margin: 10px 2.5%
+    width: 30%
+    float: left
     @include radius(5px)
     form
       padding: 10px
@@ -396,18 +393,14 @@ header
         padding: 3px 0
 
 article
-  margin: 0 auto
-  width: 100%
-  max-width: 1140px
   h1
     text-align: center
     color: $med_blue
     font-size: 34px
     font-weight: 100
   section
-    width: 46%
-    margin: 0 2%
-    min-width: 500px
+    width: 44%
+    margin: 0 3%
     float: left
     h2
       text-align: center
@@ -436,10 +429,38 @@ footer
  * ==========================================================================
 
 @media only screen and (min-width: 480px)
-  /* Style adjustments for viewports 480px and over go here
+  .wrap
+    width: 100%
+    padding: 10px
+    margin: 0 auto
+    position: relative
 
 @media only screen and (min-width: 768px)
-  /* Style adjustments for viewports 768px and over go here
+  .wrap
+    width: 740px
+    margin: 0 auto
+    position: relative
+  
+@media only screen and (min-width: 1024px)
+  .wrap
+    width: 960px
+    margin: 0 auto
+    position: relative
+  .headline 
+    height: inherit
+    h2
+      font-size: 40px
+      line-height: 48px
+
+@media only screen and (min-width: 1400px) 
+  .wrap
+    width: 1280px
+    margin: 0 auto
+    position: relative
+  .headline h2
+    font-size: 52px
+    line-height: 58px
+
 
 /* ==|== non-semantic helper classes ========================================
  * Please define your styles before this section.
