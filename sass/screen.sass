@@ -322,55 +322,54 @@ a.button
   @include button()
   text-decoration: none
 
+body
+  overflow: hidden
+
 p
   margin: 1.5em 0
 
 header
   @include gradient(lighten($dark_blue, 15%), $dark_blue)
   border-bottom: 1px solid #fff
-  position: relative
   #logo
     padding: 10px
-    margin: 10px
+    display: block
+    margin: 0 auto
+    width: auto
     @include radius(5px)
     &:hover
       background: rgba(255, 255, 255, 0.1)
   #phone
-    position: absolute
-    right: 20px
-    top: 30px
-    text-align: right
     padding: 10px
+    text-align: center
     @include radius(3px)
+    a
+      color: #fff
     .cta
       color: #fff
     .number
       color: $green
       font-size: 30px
 
-
 #banner
   @include gradient(#ddd, #ccc)
-  overflow: auto
   border-bottom: 1px solid #888
   .headline
     background: url(../img/banner-bg.png) right bottom no-repeat
     height: 390px
-    width: 60%
+    padding-top: 10px
+    position: relative
     margin: 0 2.5%
-    float: left
     h2
+      font-size: 28px
+      line-height: 32px
+      margin-top: 0
       color: $med_blue
-      position: relative
-      top: 30px
-      left: 40px
       font-weight: 100
   .form
     min-height: 370px
     background: rgba(255, 255, 255, 0.5)
-    margin: 10px 2.5%
-    width: 30%
-    float: left
+    margin: 0
     @include radius(5px)
     form
       padding: 10px
@@ -388,20 +387,21 @@ header
         font-style: italic
         font-size: 18px
         @include radius(3px)
+        &[type="submit"]
+          width: 200px
+          margin: 0 auto
       select
-        text-indent: 5px
         padding: 3px 0
 
 article
   h1
     text-align: center
     color: $med_blue
-    font-size: 34px
+    @include adjust-font-size-to(34px)
     font-weight: 100
   section
-    width: 44%
-    margin: 0 3%
-    float: left
+    width: auto
+    padding: 0 1.5%
     h2
       text-align: center
       color: $med_blue
@@ -415,7 +415,8 @@ article
 footer
   @include gradient($dark_blue, darken($dark_blue, 10%))
   text-align: center
-  padding: 20px 0
+  padding: 20px 10px
+  width: auto
   margin-top: 50px
   color: #fff
   a
@@ -427,39 +428,81 @@ footer
  * These override the primary ('mobile first') styles
  * Modify as content requires.
  * ==========================================================================
+ 
+@media only screen and (min-width: 320px)
+
 
 @media only screen and (min-width: 480px)
   .wrap
-    width: 100%
-    padding: 10px
-    margin: 0 auto
-    position: relative
+    margin: 0 10px
+    width: auto
+        
+@media only screen and (min-width: 560px)
+  header
+    overflow: auto
+    #logo
+      float: left
+      padding: 10px 0
+    #phone
+      float: right
+  #banner
+    .headline h2
+      font-size: 52px
+      line-height: 58px
+      top: 0
+      left: 0
+
 
 @media only screen and (min-width: 768px)
   .wrap
-    width: 740px
+    width: 760px
     margin: 0 auto
-    position: relative
-  
+  #banner
+    .headline
+      float: left
+      width: 50%
+      margin: 0% 2.5%
+      h2
+        font-size: 40px
+        line-height: 44px
+    .form
+      width: 40%
+      margin: 0 1.25%
+      float: right
+  article
+    section
+      width: 47%
+      float: left
+      &.full-width
+        width: 80%
+        min-width: 400px
+        margin-left: 10%
+        margin-right: 10%
+
 @media only screen and (min-width: 1024px)
   .wrap
     width: 960px
-    margin: 0 auto
-    position: relative
-  .headline 
-    height: inherit
-    h2
-      font-size: 40px
-      line-height: 48px
 
-@media only screen and (min-width: 1400px) 
+
+@media only screen and (min-width: 1400px)
+  #banner
+    .headline
+      h2
+        position: relative
+        top: 5%
+        left: 10%
+        font-size: 52px
+      .caption
+        position: relative
+        left: 50%
+        top: 20%
   .wrap
-    width: 1280px
-    margin: 0 auto
-    position: relative
-  .headline h2
-    font-size: 52px
-    line-height: 58px
+    width: 1360px
+  article section.full-width
+    width: 50%
+    margin-left: 25%
+    margin-right: 25%
+
 
 
 /* ==|== non-semantic helper classes ========================================

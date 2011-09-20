@@ -4,7 +4,7 @@ var FORMALIZE=function(a,b,c){var d="placeholder"in c.createElement("input"),e="
 var $allVideos = $("iframe[src^='http://www.youtube.com']"),
  
     // The element that is fluid width
-    $fluidEl = $("section");
+    $fluidEl = $("article section");
  
 // Figure out and save aspect ratio for each video
 $allVideos.each(function() {
@@ -35,8 +35,3 @@ $(window).resize(function() {
  
 // Kick off one resize to fix all videos on page load
 }).resize();
-
-$(document).ready(function(){
-  var banner_height = $('#banner').height();
-  
-})
