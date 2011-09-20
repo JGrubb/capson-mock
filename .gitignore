@@ -33,7 +33,7 @@ dwsync.xml
 .svn
 .CVS
 intermediate
-publish
+# publish
 .idea
 
 # build script local files
