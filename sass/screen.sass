@@ -324,6 +324,7 @@ a.button
 
 body
   overflow: hidden
+  font-family: 'lucida grande', 'helvetica neue', arial, verdana, sans-serif
 
 p
   margin: 1.5em 0
@@ -331,6 +332,7 @@ p
 header
   @include gradient(lighten($dark_blue, 15%), $dark_blue)
   border-bottom: 1px solid #fff
+  overflow: hidden
   #logo
     padding: 10px
     display: block
@@ -351,11 +353,40 @@ header
       color: $green
       font-size: 30px
 
+#main-nav
+  margin: 0
+  background: darken($med_blue, 5%)
+  border-bottom: 1px solid #fff
+  overflow: auto
+  ul
+    margin: 0 auto
+    padding-left: 0
+    li
+      list-style-type: none
+      display: inline
+      position: relative
+      border-bottom: 1px solid $med_blue
+      overflow: auto
+      margin: 0
+      display: block
+      width: auto
+      &.first
+      a
+        padding: 10px
+        color: #fff
+        display: block
+        text-decoration: none
+        font-size: 16px
+        @include radius(3px)
+        &:hover
+          background: darken($med_blue, 10%)
+      ul
+        display: none
+
 #banner
   @include gradient(#ddd, #ccc)
   border-bottom: 1px solid #888
   .headline
-    background: url(../img/banner-bg.png) right bottom no-repeat
     height: 390px
     padding-top: 10px
     position: relative
@@ -433,11 +464,18 @@ footer
 
 
 @media only screen and (min-width: 480px)
+  #main-nav
+    ul li
+      width: 49.99%
+      float: left
   .wrap
     margin: 0 10px
     width: auto
         
 @media only screen and (min-width: 560px)
+  #main-nav
+    ul li
+      width: 33%
   header
     overflow: auto
     #logo
@@ -447,8 +485,8 @@ footer
       float: right
   #banner
     .headline h2
-      font-size: 52px
-      line-height: 58px
+      font-size: 46px
+      line-height: 50px
       top: 0
       left: 0
 
@@ -467,8 +505,10 @@ footer
         line-height: 44px
     .form
       width: 40%
-      margin: 0 1.25%
+      margin-left: 5%
       float: right
+      h2
+        font-size: 18px
   article
     section
       width: 47%
@@ -480,6 +520,11 @@ footer
         margin-right: 10%
 
 @media only screen and (min-width: 1024px)
+  #main-nav
+    ul li
+      width: auto
+      border-bottom: none
+      &:hover
   .wrap
     width: 960px
 
@@ -496,6 +541,9 @@ footer
         position: relative
         left: 50%
         top: 20%
+    .form
+      width: 30%
+      margin: 0 7.5%
   .wrap
     width: 1360px
   article section.full-width
